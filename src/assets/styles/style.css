@@ -7,19 +7,26 @@ body {
   margin: 0;
   padding: 0;
   background-color: #F1F0E8;
-  /* font-family: "Lemon", serif; */
-  font-family: "Gill Sans", sans-serif;
+  font-family: "Lemon", serif;
   font-weight: 900;
   font-size: 32px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  
+  -moz-osx-font-smoothing: grayscale; 
 }
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  justify-content:space-around;
+  padding: 20px;
+  column-gap: 15px;
+}
+
 header {
-  padding-top: 10px;
-  padding-left: 10px;
+  grid-column: 1/2;
+  height: 2em;
 }
 
 img {
@@ -31,8 +38,7 @@ a {
   text-decoration: none;
   padding-left: 5px;
   opacity: 0.92;
-  /* text-transform: uppercase; */
-
+  text-transform: uppercase;
 }
 
 a:link {
@@ -43,31 +49,16 @@ a:visited {
   color: #1b1818;
 }
 
-.container {
-  align-items: center;
-  justify-content: space-between;
-  display: flex;
-  height: 80vh;
-  width: 97%;
-  margin: 50px auto;
-  text-align: center;
-  gap: 20px;
-  
-}
 
 .menu-container {
-  width: 50%;
-  height: 50vh;
   display: flex;
-  justify-content: space-around;
+  height: 85vh;
+  grid-column: 1/2;
+  grid-row: 2/3;
   align-items: center;
+  justify-content: space-around;
 }
 
-.card img{
-  height: 200px;
-  width: 200px;
-  margin-top: 1em;
-}
 
 .gallery {
   background-image: url('../images/gallery.png');
@@ -78,41 +69,117 @@ a:visited {
 }
 
 .voting {
-  background-image: url('../images/voting.jpeg');
+  background-image: url('../images/voting.png');
 }
 
 .card {
-  height: 80%;
+  height: 50%;
   width: 30%;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   background-size:contain;
   background-repeat: no-repeat;
+  background-position: center top 20px;
   position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: rgb(170, 151, 120) 0px 4px 12px;
 }
 
 .btn {
   height: 25%;
   width: 100%;
+  border: 0;
   border-radius: 0 0 20px 20px;
-  font-family: "Gill Sans", sans-serif;
+  font-family: 'Trebuchet MS', sans-serif; 
   font-size: 26px;
   font-weight: 700;
   position: absolute;
   right:    0;
   bottom:   0;
+  cursor:pointer;
+}
+
+.btn:focus {
+  background: #1b1818;
+  outline: none;
+  -webkit-box-shadow: inset 1px 2px 5px #F1F0E8;
+  -moz-box-shadow: inset 1px 2px 5px #F1F0E8;
+  box-shadow: inset 1px 2px 5px #F1F0E8;
+  color: #fff;
+  border: 3px solid #F1F0E8;
+
 }
 
 .main-container {
-  width: 50%;
   background-image: url('../images/dog-main.png');
-  height: 88vh;
   background-size:contain;
   background-repeat: no-repeat;
   background-position: right;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  height: 95vh;
 }
+
+.navigation {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-around;
+  height: 85%;
+  gap: 10px;
+}
+
+input {
+  grid-column: 1/4;
+  border-radius: 20px;
+  width: 100%;
+  border: none;
+  font-family: 'Trebuchet MS', sans-serif; 
+  font-size: 18px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.nav-icons {
+  grid-column: 4/5;
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+  gap: 15px;
+  
+}
+
+.sad {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+}
+
+.heart {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+}
+
+.smiley {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+}
+
 
