@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 body {
   margin: 0;
@@ -22,6 +23,7 @@ body {
   justify-content:space-around;
   padding: 20px;
   column-gap: 15px;
+  gap: 10px;
 }
 
 header {
@@ -100,16 +102,11 @@ a:visited {
   position: absolute;
   right:    0;
   bottom:   0;
-  cursor:pointer;
 }
 
 .btn:focus {
-  background: #1b1818;
+  background: #B0A4A4;
   outline: none;
-  -webkit-box-shadow: inset 1px 2px 5px #F1F0E8;
-  -moz-box-shadow: inset 1px 2px 5px #F1F0E8;
-  box-shadow: inset 1px 2px 5px #F1F0E8;
-  color: #fff;
   border: 3px solid #F1F0E8;
 
 }
@@ -118,32 +115,158 @@ a:visited {
   background-image: url('../images/dog-main.png');
   background-size:contain;
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right bottom;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   grid-column: 2/3;
   grid-row: 2/3;
-  height: 95vh;
+  height: 85vh;
+
+}
+
+.sort-bar {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: auto;
+  gap: 15px;
+  
+}
+
+.back {
+  grid-column: 1/2;
+  background-color: #B0A4A4;
+  border-radius: 20px;
+  border: none;
+  font-family: 'Trebuchet MS', sans-serif; 
+  font-size: 18px;
+  text-align: left;
+
+}
+
+.back:hover {
+  box-shadow: rgb(170, 151, 120) 0px 4px 12px;
+}
+
+label {
+  grid-column: 2/5;
+  border-radius: 20px;
+  font-size: 26px;
+  text-align: center;
+  
+}
+
+.opt-breed {
+  grid-column: 5/10;
+  background-color: #B0A4A4;
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+  font-family: 'Trebuchet MS', sans-serif; 
+  font-size: 14px;
+
+}
+
+.opt-breed:hover {
+  box-shadow: rgb(170, 151, 120) 0px 4px 12px;
+}
+
+.limitation {
+  grid-column: 10/13;
+  background-color: #B0A4A4;
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+  font-family: 'Trebuchet MS', sans-serif; 
+  font-size: 14px;
+
+}
+
+.limitation:hover {
+  box-shadow: rgb(170, 151, 120) 0px 4px 12px;
+}
+
+.up {
+  grid-column: 13/14;
+  background-color: #B0A4A4;
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+
+}
+
+.up:hover {
+  box-shadow: rgb(170, 151, 120) 0px 4px 12px;
+}
+
+.down {
+  grid-column: 14/15;
+  background-color: #B0A4A4;
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+
+}
+
+.down:hover {
+  box-shadow: rgb(170, 151, 120) 0px 4px 12px;
 }
 
 .navigation {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: space-around;
-  height: 85%;
   gap: 10px;
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
 
-input {
+.search {
   grid-column: 1/4;
-  border-radius: 20px;
+  position: relative;
+  max-width: 100%;
+
+}
+
+
+.search input {
   width: 100%;
+  border-radius: 20px;
   border: none;
   font-family: 'Trebuchet MS', sans-serif; 
   font-size: 18px;
   text-align: left;
   padding-left: 20px;
+  height: 100%;
+
+
+}
+
+.search input:focus {
+  outline: none;
+  border: none;
+}
+
+  .search input:hover {
+  box-shadow: rgb(170, 151, 120) 0px 4px 12px;
+}
+
+.search button {
+  aspect-ratio: 1;
+  position: absolute;
+  right: 0;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  width: 50px;
+  height: 100%;
+  border: none;
+
+}
+
+.search button:hover {
+  box-shadow: rgb(170, 151, 120) 0px 4px 12px;
+  background-color: #B0A4A4;
 }
 
 .nav-icons {
@@ -152,7 +275,12 @@ input {
   justify-content:flex-end;
   align-items: center;
   gap: 15px;
-  
+  list-style: none;
+}
+
+ul {
+  list-style: none;
+  display: flex;
 }
 
 .sad {
@@ -160,8 +288,12 @@ input {
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   width: 50px;
-  height: 50px;
+  height: 100%;
   padding: 10px;
+}
+
+.sad:hover {
+  box-shadow: rgb(170, 151, 120) 0px 4px 12px;
 }
 
 .heart {
@@ -169,8 +301,12 @@ input {
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   width: 50px;
-  height: 50px;
+  height: 100%;
   padding: 10px;
+}
+
+.heart:hover {
+  box-shadow: rgb(170, 151, 120) 0px 4px 12px;
 }
 
 .smiley {
@@ -178,8 +314,12 @@ input {
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   width: 50px;
-  height: 50px;
+  height: 100%;
   padding: 10px;
+}
+
+.smiley:hover {
+  box-shadow: rgb(170, 151, 120) 0px 4px 12px;
 }
 
 
